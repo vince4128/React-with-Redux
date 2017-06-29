@@ -1,0 +1,25 @@
+{
+  "name": "modern-react-redux",
+  "version": "1.0.0",
+  "description": "repo for the Stephen Grider course on Udemy Modern React with Redux",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vince4128/React-with-Redux.git"
+  },
+  "keywords": [
+    "react",
+    "udemy",
+    "course",
+    "redux"
+  ],
+  "author": "varlet vincent",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vince4128/React-with-Redux/issues"
+  },
+  "homepage": "https://github.com/vince4128/React-with-Redux#readme"
+}
