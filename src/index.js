@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 
+import App from './components/app';
+
 ReactDOM.render(
-  React.createElement('div'), document.querySelector('.container')
+  <App />, document.querySelector('.container')
 );
