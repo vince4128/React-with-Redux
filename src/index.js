@@ -7,11 +7,6 @@ import { createStore, applyMiddleware } from 'redux';
 //api key
 const API_KEY = 'AIzaSyD4UktRSzQVmt_yYtEDAM6ePRIMgCvX4Kg';
 
-//exemple search
-YTSearch({key: API_KEY, term: 'surfboards'}, function(data){
-  console.log(data);
-});
-
 import App from './components/app';
 
 ReactDOM.render(
