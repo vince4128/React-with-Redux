@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import SearchBar from './search_bar';
+import VideoList from './video_list';
 
 class App extends Component {
 
@@ -21,6 +22,7 @@ class App extends Component {
     return (
       <div>
         <SearchBar />
+        <VideoList videos={this.state.videos}/>
       </div>
     );
   }
