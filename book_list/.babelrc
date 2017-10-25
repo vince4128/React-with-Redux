@@ -1,0 +1,3 @@
+{
+    "presets": [["env", {"debug": true}], "react"] // debug on only for this example
+}
