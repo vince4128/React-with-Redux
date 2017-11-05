@@ -38,7 +38,8 @@ let VENDOR_LIBS = [
     "react-dom/umd/react-dom.development",
     "react-redux/dist/react-redux",
     "react-router/umd/react-router",
-    "redux/dist/redux"
+    "redux/dist/redux",
+    "redux-promise/"
 ]
 
 
@@ -52,7 +53,8 @@ if(!dev){
         "react-dom/umd/react-dom.production.min.js",
         "react-redux/dist/react-redux.min.js",
         "react-router/umd/react-router.min.js",
-        "redux/dist/redux.min.js"
+        "redux/dist/redux.min.js",
+        "redux-promise/"
     ];
 
     //si on est pas en dev on ajoute postcss-loader et autoprefixer
