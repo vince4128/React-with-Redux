@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { fetchWeather } from '../actions/index';
 
-export default class SearchBar extends Component {
+class SearchBar extends Component {
 
     constructor(props){
         super(props);
@@ -17,7 +20,8 @@ export default class SearchBar extends Component {
 
     onFormSubmit(event){
         event.preventDefault();
-        
+        this.props.fetchWeather(this.state.term);
+        this.setState({ term:'' });
     }
 
     render(){
@@ -36,3 +40,17 @@ export default class SearchBar extends Component {
         );
     }
 }
+
+function mapDispatchToProps(dispatch){
+    return bindActionCreators({ fetchWeather }, dispatch);
+}
+
+//null as first argument
+//whenever we are passing in a function
+//that is supposed to map our dispatch to the props of our container
+//it always goes in as the second argument
+
+//because here the component doesn't care about the redux state
+//so we don't need any state
+
+export default connect(null, mapDispatchToProps)(SearchBar);
