@@ -16,3 +16,5 @@ ReactDOM.render(
     </Provider>,
     document.querySelector(".container")
 );
+
+import Style from "../style/style.css";
