@@ -25,11 +25,10 @@ ReactDOM.render(
     <Provider store={createStoreWithMiddleware(reducers)}>
       <BrowserRouter>
         <div>
-        <Switch>
+          <h1>Header</h1>
           <Route path='/' exact component={Home}/>
           <Route path='/hello' exact component={Hello}/>
           <Route path='/goodbye' exact component={Goodbye}/>
-        </Switch>
         </div>
       </BrowserRouter>
     </Provider>
