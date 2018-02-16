@@ -44,10 +44,11 @@
     "axios": "^0.17.0",
     "babel-preset-stage-1": "^6.24.1",
     "lodash": "^4.17.4",
+    "prop-types": "^15.6.0",
     "react": "^16.1.0",
     "react-dom": "^16.1.0",
     "react-redux": "^5.0.6",
-    "react-router-dom": "^4.0.0",
+    "react-router-dom": "^4.2.2",
     "react-sparklines": "^1.7.0",
     "redux": "^3.7.2",
     "redux-promise": "^0.5.3"

@@ -58,7 +58,7 @@ if(!dev){
     ];
 
     //si on est pas en dev on ajoute postcss-loader et autoprefixer
-    cssLoaders.push({
+    /*cssLoaders.push({
         loader: 'postcss-loader',
         options: {
             plugins: (loader) => [
@@ -67,7 +67,7 @@ if(!dev){
                 })
             ]
         }
-    })
+    })*/
 }
 
 //configuration
@@ -138,12 +138,12 @@ let config = {
                     {
                         loader: 'url-loader',
                         options: {
-                            limit: 8192,
+                            limit: 2048,
                             name:'img/[name].[ext]'
                         }
                     }
                 ]
-            },
+            }/*,
             {
                 test: /\.(html|txt|json)$/,
                 use:[
@@ -157,14 +157,15 @@ let config = {
                     }
                 ],
                 exclude: path.join(__dirname,'src/index.html')//on exclue index.html car on utilise HtmlWebpackPlugin
-            }
+            }*/
         ]
 
     },
 
     devServer: {
         port:3003,
-        contentBase: path.join(__dirname, "src"),
+        contentBase: path.join(__dirname, "dist"),
+        historyApiFallback: true //Pour que react-router-dom fonctionne !
     },
 
     plugins: [
@@ -201,7 +202,8 @@ if(!dev){
     config.plugins.push(new CleanWebpackPlugin(['dist'], {
         root: path.resolve('./'),
         verbose: true,
-        dry: false
+        dry: false,
+        exclude:['img','video']
       }))
   }
   
