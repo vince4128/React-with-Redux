@@ -84,6 +84,7 @@ let config = {
     //point de sortie
     output:{
         path:path.resolve('./dist'),
+        publicPath:'/',
         filename: dev ? '[name].js' : '[name].[chunkhash:8].js'
     },
 
