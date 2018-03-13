@@ -1,18 +1,24 @@
 import React,  { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { createPost } from '../actions';
 
 class PostsNew extends Component {
 
     renderField(field) {//param field contain some event handlers to wire up to the jsx that we're returning
+    const { meta: {touched, error} } = field;//destructuring to access properties on nested objects for refactor
+        const className = `form-group ${touched && error ? 'alert alert-danger' : ''}`;
+
         return (
-            <div className="form-group has-danger">
+            <div className={className}>
                 <label>{field.label}</label>
                 <input
                     className="form-control"
                     type="text"
                     {...field.input}
                 />
-                {field.meta.touched ? field.meta.error : ''}
+                {touched ? error : ''}
             </div>
         );
     }
@@ -26,8 +32,10 @@ class PostsNew extends Component {
     }
 
     onSubmit(values) {
-        //this === component
-        console.log(values);
+        //this === component        
+       this.props.createPost(values, () => {
+            this.props.history.push('/');
+       });
     }
 
     render() {
@@ -52,6 +60,7 @@ class PostsNew extends Component {
                     component={this.renderField}
                 />
                 <button type="submit" className="btn btn-primary">Submit</button>
+                <Link to="/" className="btn btn-danger">Cancel</Link>
             </form>
         )
     }
@@ -79,4 +88,6 @@ function validate(values){//helper function
 export default reduxForm({
     validate:validate,
     form:'PostsNewForm'   //name must be unique (in case of several form it's usefull), and could be whatever string we want. 
-})(PostsNew);
+})(
+    connect(null, { createPost })(PostsNew)
+);
