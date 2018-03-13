@@ -49,11 +49,17 @@ if(!dev){
     //si on est pas en dev on utilise des versions minifiees des lib js
     VENDOR_LIBS = [
         //lib ici
-        "react/umd/react.development.min.js",
+        /*"react/umd/react.development.min.js",
         "react-dom/umd/react-dom.production.min.js",
         "react-redux/dist/react-redux.min.js",
         "react-router/umd/react-router.min.js",
         "redux/dist/redux.min.js",
+        "redux-promise/"*/
+        "react/umd/react.development",
+        "react-dom/umd/react-dom.development",
+        "react-redux/dist/react-redux",
+        "react-router/umd/react-router",
+        "redux/dist/redux",
         "redux-promise/"
     ];
 
