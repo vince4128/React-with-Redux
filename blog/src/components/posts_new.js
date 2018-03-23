@@ -50,13 +50,18 @@ class PostsNew extends Component {
                     component={this.renderField}
                 />
                 <Field
-                    label="Categories"
-                    name="categories"
+                    label="category"
+                    name="category"
                     component={this.renderField}
                 />
                 <Field
                     label="Post content"
-                    name="content"
+                    name="body"
+                    component={this.renderField}
+                />
+                <Field
+                    label="Author"
+                    name="author"
                     component={this.renderField}
                 />
                 <button type="submit" className="btn btn-primary">Submit</button>
@@ -73,11 +78,14 @@ function validate(values){//helper function
     if(!values.title){
         errors.title = "Enter a title !";
     }
-    if(!values.categories){
-        errors.categories = "Enter a categories !";
+    if(!values.category){
+        errors.category = "Enter a categories !";
     }
-    if(!values.content){
-        errors.content = "Enter a content !";
+    if(!values.body){
+        errors.body = "Enter a content !";
+    }
+    if(!values.author){
+        errors.author = "Enter a author !";
     }
 
     //if errors is empty, the form is fine to submit

@@ -64,7 +64,7 @@ app.listen(PORT,function(){
 });
 
 //test
-const Blogpost = require("./models/blogpost.model.js");
+/*const Blogpost = require("./models/blogpost.model.js");
 
 for(let i = 0; i<4; i++){
 
@@ -84,5 +84,5 @@ for(let i = 0; i<4; i++){
         }
     });
 
-}
+}*/
 

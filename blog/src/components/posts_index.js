@@ -13,8 +13,9 @@ class PostsIndex extends Component {
     renderPosts(){
         return _.map(this.props.posts, post => {
             return(
-                <li className="list-group-item" key={post.id}>
+                <li className="list-group-item" key={post._id}>
                     <h3>{post.title}</h3>
+                    <p>{JSON.stringify(post)}</p>
                 </li>
             )
         });
@@ -32,7 +33,6 @@ class PostsIndex extends Component {
                 <ul className="list-group">
                     {this.renderPosts()}
                 </ul>
-                {JSON.stringify(this.props.posts)}
             </div>
         );
     }

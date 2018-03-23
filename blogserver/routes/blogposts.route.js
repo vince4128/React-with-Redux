@@ -54,10 +54,20 @@ router.get("/new", function(req, res){
 //SHOW - montrer le détail d'un poste
 router.get("/:id", function(req,res){
     //trouver le poste avec l'id donné
-    Blogpost.findById(req.params.id, function(err, blogpost){
+    //res.send(req.params.id);
+    /*Blogpost.findById(req.params.id, function(err, blogpost){
         if(err){
             console.log(err);
-            res.send("voilà le poste " + blogpost);
+            res.send("voilà le poste " + blogpost + " " + req.params.id);
+        }
+    });*/
+    Blogpost.findById(req.params.id).exec(function(err, foundblogPost){
+        if(err){
+            console.log(err);
+        } else {
+            console.log(foundblogPost);
+            //render the show template
+            res.send(foundblogPost);        
         }
     });
 });
