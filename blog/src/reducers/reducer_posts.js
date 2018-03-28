@@ -12,7 +12,7 @@ export default function(state = {}, action){
             //or we can do :
             
             //return the state that we already have
-            return { ...state, [action.payload.data.id]: action.payload.data };
+            return { ...state, [action.payload.data._id]: action.payload.data };
 
         case FETCH_POSTS:
             return _.mapKeys(action.payload.data, "_id");
