@@ -10,25 +10,11 @@ const express        = require("express"),
 mongoose.Promise = global.Promise;
 
 //connexion à la DB
-const promiseConnection = mongoose.connect("mongodb://127.0.0.1/blogreact");
 
-promiseConnection.then(function(){
-    if(err){
-        console.log('erreur de connexion !');        
-    }else{
-        console.log('connecté à la base de donnée !');
-    }
-})
-
-//  retour de la promesse de connection
-/*promiseConnection.then(function(){
-    console.log('connecté à la base de données !');
-});*/
-
-//  écouteur d'erreur sur la connection
-/*promiseConnection.on('error', function(error){
-    console.log('erreur de connection à la base de donnée ! ' + error);
-});*/
+mongoose.connect("mongodb://127.0.0.1/blogreact?connectTimeoutMS=5000").then(
+    () => { console.log("connecté à la base de donnée !") },
+    err => { console.log("une erreur est survenue (timeOut), la connexion à la base de donnée à échoué ! ", err.message)}
+);
 
 //port
 const PORT = 3000;
