@@ -32,7 +32,7 @@ export function createPost(values, callback){
 }
 
 export function fetchPost(id) {
-    const request = axios.get(`${ROOT_URL}/posts/${id}`);
+    const request = axios.get(`${ROOT_URL}/${id}`);
 
     return {
         type: FETCH_POST,
