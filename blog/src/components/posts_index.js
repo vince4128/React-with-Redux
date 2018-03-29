@@ -14,8 +14,7 @@ class PostsIndex extends Component {
         return _.map(this.props.posts, post => {
             return(
                 <li className="list-group-item" key={post._id}>
-                    <h3>{post.title}</h3>
-                    <p>{JSON.stringify(post)}</p>
+                    <Link to={`/posts/${post._id}`}><h3>{post.title}</h3></Link>
                 </li>
             )
         });

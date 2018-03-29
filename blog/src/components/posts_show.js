@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { fetchPost } from '../actions';
 
 class PostsShow extends Component{
 
     componentDidMount(){
+        //vérifier si le post est déjà en mémoire
         const { id } = this.props.match.params;
         this.props.fetchPost(id);
     }
@@ -22,6 +24,7 @@ class PostsShow extends Component{
 
         return(
             <div>
+                <Link to="/">Back to Index</Link>
                 <h3>{post.title}</h3>
                 <h6>Categories : {post.category}</h6>
                 <p>{post.body}</p>  
