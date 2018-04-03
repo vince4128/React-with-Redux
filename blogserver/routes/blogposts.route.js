@@ -46,11 +46,6 @@ router.post("/",function(req,res){
 
 });
 
-//NEW - afficher le formulaire pour la creation d'un nouveau post
-router.get("/new", function(req, res){
-    res.send("campgrounds/new");
-});
-
 //SHOW - montrer le détail d'un poste
 router.get("/:id", function(req,res){
     //trouver le poste avec l'id donné
@@ -71,5 +66,22 @@ router.get("/:id", function(req,res){
         }
     });
 });
+
+
+//DELETE - effacer un post
+router.delete("/:id", function(req,res){
+    Blogpost.findByIdAndRemove(req.params.id, function(err, deletedPost) {  
+        // As always, handle any potential errors:
+        if (err) return res.status(500).send(err);
+        // We'll create a simple object to send back with a message and the id of the document that was removed
+        // You can really do this however you want, though.
+        const response = {
+            message: "Todo successfully deleted",
+            id: deletedPost._id
+        };
+        return res.status(200).send(response);
+    });
+});
+
 
 module.exports = router;
